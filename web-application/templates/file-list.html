@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Character encoding scheme -->
+		<meta charset="UTF-8">
+		<title>Files on the cloud</title> 
+		<style type="text/css">
+			a:active,a:hover,a:visited,a:link {
+				text-decoration: none;
+				color: black;
+			}
+			button {
+				background-color: white;
+				color :grey;
+				border-radius: 10px;
+			}
+			button:hover {
+				background-color: blue;
+				color: black;
+			}
+			div {
+			        background-color: #00ced1;
+			       
+			}
+			body {
+			        background-color: #48d1cc;
+			       
+			}
+			h1 {
+			        color: white;
+			        font-size: 50px;
+			       
+			}
+		</style>
+	</head>
+<body>
+	{% if msg!=''%}
+		<h3 style="color: red">{{msg}}</h3>
+	{%else%}
+		<h3>File Directory</h3>
+		{% for itr in range(length):%}
+			<li><a href="retrieve/file/{{list[itr]}}">{{list[itr]}}</a></li>
+		{% endfor%}
+	{%endif%}
+</body>
+</html>
